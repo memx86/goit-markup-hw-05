@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Портфолио</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/modern-normalize.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <!-- Шапка сайта -->
+    <header class="header secondary-background">
+      <div class="container flex">
+        <!-- Меню навигации -->
+        <nav class="flex site-nav">
+          <a href="./index.html" class="link logo"
+            ><span class="accent-text">Web</span><span class="logo-text">Studio</span></a
+          >
+          <ul class="header-list list flex">
+            <li class="item">
+              <a href="./index.html" class="link secondary-text hover-accent focus-accent"
+                >Студия</a
+              >
+            </li>
+            <li class="item">
+              <a
+                href="./portfolio.html"
+                class="link current secondary-text hover-accent focus-accent"
+                aria-current="page"
+                >Портфолио</a
+              >
+            </li>
+            <li class="item">
+              <a href="" class="link secondary-text hover-accent focus-accent">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <!-- Контакты -->
+        <ul class="header-list contacts list flex">
+          <li class="item">
+            <a href="mailto:info@devstudio.com" class="link main-text hover-accent focus-accent">
+              <svg class="icon" width="16px" height="12px">
+                <use href="./images/sprite.svg#icon-envelope"></use>
+              </svg>
+              info@devstudio.com</a
+            >
+          </li>
+          <li class="item">
+            <a href="tel:+380961111111" class="link main-text hover-accent focus-accent">
+              <svg class="icon" width="16px" height="12px">
+                <use href="./images/sprite.svg#icon-smartphone"></use>
+              </svg>
+              +38 096 111 11 11</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+    <!-- Портфолио -->
+    <main>
+      <section class="section">
+        <div class="container">
+          <h1 class="secondary-text concealer">Портфолио</h1>
+          <!-- Фильтр -->
+          <ul class="filter list">
+            <li class="item">
+              <button class="button secondary-text" type="button">Все</button>
+            </li>
+            <li class="item">
+              <button class="button secondary-text" type="button">Веб-сайты</button>
+            </li>
+            <li class="item">
+              <button class="button secondary-text" type="button">Приложения</button>
+            </li>
+            <li class="item">
+              <button class="button secondary-text" type="button">Дизайн</button>
+            </li>
+            <li class="item">
+              <button class="button secondary-text" type="button">Маркетинг</button>
+            </li>
+          </ul>
+          <!--Собственно портфолио -->
+          <ul class="portfolio list">
+            <li class="portfolio-item secondary-background">
+              <a href="" class="link">
+                <img class="image" src="./images/portfolio/project1.jpg" alt="Технокряк" />
+                <div class="portfolio-bottom">
+                  <h2 class="secondary-text">Технокряк</h2>
+                  <p class="portfolio-text">Веб-сайт</p>
+                </div>
+              </a>
+            </li>
+            <li class="portfolio-item secondary-background">
+              <a href="" class="link">
+                <img
+                  class="image"
+                  src="./images/portfolio/project2.jpg"
+                  alt="Постер New Orlean vs Golden Star"
+                />
+                <div class="portfolio-bottom">
+                  <h2 class="secondary-text">Постер New Orlean vs Golden Star</h2>
+                  <p class="portfolio-text">Дизайн</p>
+                </div>
+              </a>
+            </li>
+            <li class="portfolio-item secondary-background">
+              <a href="" class="link">
+                <img class="image" src="./images/portfolio/project3.jpg" alt="Ресторан Seafood" />
+                <div class="portfolio-bottom">
+                  <h2 class="secondary-text">Ресторан Seafood</h2>
+                  <p class="portfolio-text">Приложение</p>
+                </div>
+              </a>
+            </li>
+            <li class="portfolio-item secondary-background">
+              <a href="" class="link">
+                <img class="image" src="./images/portfolio/project4.jpg" alt="Проект Prime" />
+                <div class="portfolio-bottom">
+                  <h2 class="secondary-text">Проект Prime</h2>
+                  <p class="portfolio-text">Маркетинг</p>
+                </div>
+              </a>
+            </li>
+            <li class="portfolio-item secondary-background">
+              <a href="" class="link">
+                <img class="image" src="./images/portfolio/project5.jpg" alt="Проект Boxes" />
+                <div class="portfolio-bottom">
+                  <h2 class="secondary-text">Проект Boxes</h2>
+                  <p class="portfolio-text">Приложение</p>
+                </div>
+              </a>
+            </li>
+            <li class="portfolio-item secondary-background">
+              <a href="" class="link">
+                <img
+                  class="image"
+                  src="./images/portfolio/project6.jpg"
+                  alt="Inspiration has no Borders"
+                />
+                <div class="portfolio-bottom">
+                  <h2 class="secondary-text">Inspiration has no Borders</h2>
+                  <p class="portfolio-text">Веб-сайт</p>
+                </div>
+              </a>
+            </li>
+            <li class="portfolio-item secondary-background">
+              <a href="" class="link">
+                <img
+                  class="image"
+                  src="./images/portfolio/project7.jpg"
+                  alt="Издание Limited Edition"
+                />
+                <div class="portfolio-bottom">
+                  <h2 class="secondary-text">Издание Limited Edition</h2>
+                  <p class="portfolio-text">Дизайн</p>
+                </div>
+              </a>
+            </li>
+            <li class="portfolio-item secondary-background">
+              <a href="" class="link">
+                <img class="image" src="./images/portfolio/project8.jpg" alt="Проект LAB" />
+                <div class="portfolio-bottom">
+                  <h2 class="secondary-text">Проект LAB</h2>
+                  <p class="portfolio-text">Маркетинг</p>
+                </div>
+              </a>
+            </li>
+            <li class="portfolio-item secondary-background">
+              <a href="" class="link">
+                <img class="image" src="./images/portfolio/project9.jpg" alt="Growing Business" />
+                <div class="portfolio-bottom">
+                  <h2 class="secondary-text">Growing Business</h2>
+                  <p class="portfolio-text">Приложение</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <!-- Футер -->
+    <footer class="footer">
+      <div class="container flex">
+        <div class="footer-left">
+          <a href="./index.html" class="link logo"
+            ><span class="accent-text">Web</span><span class="footer-text">Studio</span></a
+          >
+          <address class="address">
+            <p class="footer-text">г. Киев, пр-т Леси Украинки, 26</p>
+            <a href="mailto:info@example.com" class="link footer-link hover-accent focus-accent"
+              >info@example.com</a
+            >
+            <br />
+            <a href="tel:+380991111111" class="link footer-link hover-accent focus-accent"
+              >+38 099 111 11 11</a
+            >
+          </address>
+        </div>
+        <section class="join">
+          <h2 class="title">Присоединяйтесь</h2>
+          <ul class="social list flex">
+            <li class="social-item" aria-label="Инстаграм">
+              <a href="" class="link">
+                <svg class="social-icon">
+                  <use href="./images/sprite.svg#icon-instagram"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social-item" aria-label="Твиттер">
+              <a href="" class="link">
+                <svg class="social-icon">
+                  <use href="./images/sprite.svg#icon-twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social-item" aria-label="Фейсбук">
+              <a href="" class="link">
+                <svg class="social-icon">
+                  <use href="./images/sprite.svg#icon-facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="social-item" aria-label="Линкедин">
+              <a href="" class="link">
+                <svg class="social-icon">
+                  <use href="./images/sprite.svg#icon-linkedin"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>

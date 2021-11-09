@@ -1,0 +1,496 @@
+:root {
+  /* основной цвет текста #757575 */
+  --main-text-color: #757575;
+  /* вторичный цвет текста #212121 */
+  --secondary-text-color: #212121;
+  /* акцент #2196F3 */
+  --accent-color: #2196f3;
+  /* цвет лого */
+  --logo-text-color: #000000;
+  /* основной цвет заливки #E5E5E5 */
+  /* --main-background-color: #e5e5e5; */
+  /* вторичный цвет заливки #FFFFFF */
+  --secondary-background-color: #ffffff;
+  /* цвет текста героя */
+  --hero-text-color: #ffffff;
+  /* заливка героя ##c4c4c4 */
+  --hero-background-color: #c4c4c4;
+  /* заливка кнопки героя при фокусе #188CE8 */
+  --hero-button-hover-color: #188ce8;
+  /* заливка команды */
+  --team-background-color: #f5f4fa;
+  /* цвет иконок #AFB1B8*/
+  --icon-color: #afb1b8;
+  /* заливка футера #2F303A*/
+  --footer-backgorund-color: #2f303a;
+  /* цвет ссылок в футере */
+  --footer-link-color: rgba(255, 255, 255, 0.6);
+}
+
+/* стилизация всей страницы */
+
+/* roboto 400,500,700,900 */
+/* raleway 700 */
+body {
+  /* background-color: var(--main-background-color); */
+  color: var(--main-text-color);
+  /* системные шрифты font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif; */
+  font-family: roboto, -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+    helvetica neue, helvetica, Ubuntu, noto, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+}
+/* Утилиты */
+/* убирает точки и левый отступ у списков*/
+.list {
+  list-style: none;
+  padding: 0;
+}
+/* убирает подчеркивание ссылок */
+.link {
+  text-decoration: none;
+}
+/* скрывает визуально контент */
+.concealer {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+/* обнуление внешних отступов */
+h1,
+h2,
+h3,
+ul,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/* закругленные края кнопок */
+.button {
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+/* смена цвета текста */
+.main-text {
+  color: var(--main-text-color);
+}
+.accent-text {
+  color: var(--accent-color);
+}
+.logo-text {
+  color: var(--logo-text-color);
+}
+.secondary-text {
+  color: var(--secondary-text-color);
+}
+/* смена цвета на accent при hover focus */
+.hover-accent:hover,
+.focus-accent:focus {
+  color: var(--accent-color);
+}
+/* вторичные цвета заливки */
+.secondary-background {
+  background-color: var(--secondary-background-color);
+}
+.hero-background {
+  background-color: var(--hero-background-color);
+}
+.accent-background {
+  background-color: var(--accent-color);
+}
+/* контейнер для центрирования и ограничения контента по ширине */
+.container {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  /* outline: 3px solid red; */
+}
+/* контейнер секций */
+.section {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+/* класс для стилизации изображений */
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+/* задание свойства флекс */
+.flex {
+  display: flex;
+}
+/* конец Утилит */
+
+/* стили шапки */
+.header {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #ececec;
+}
+.logo {
+  font-family: raleway, sans-serif;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+}
+.site-nav > .logo {
+  align-items: center;
+}
+/* выделение текущей страницы в навигации */
+.link.current {
+  color: var(--accent-color);
+}
+/* стиль текста шапки + центрирование по высоте */
+.header-list {
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+  align-items: center;
+}
+/* отступы шапки */
+.site-nav .link {
+  margin-right: 93px;
+}
+.header-list > .item:not(:last-child) {
+  margin-right: 50px;
+}
+.site-nav {
+  margin-right: auto;
+}
+.site-nav .logo {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.header-list .link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+/* иконки в контактах */
+.contacts .link {
+  display: inline-flex;
+  align-items: center;
+}
+.contacts .icon {
+  fill: currentColor;
+  margin-right: 10px;
+}
+
+/* стили героя */
+.hero {
+  color: var(--hero-text-color);
+  text-align: center;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  max-width: 1600px;
+  min-height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../images/hero-bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.hero-title {
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 696px;
+}
+.hero .button {
+  color: var(--hero-text-color);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.87;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  /* у самой кнопки с классом .button граница 1 px */
+  padding-left: 31px;
+  padding-right: 31px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.hero .button:hover,
+.hero .button:focus,
+.hero .button:active {
+  /* color: var(--accent-color); */
+  background-color: var(--hero-button-hover-color);
+}
+/* стили особенностей */
+.feature.section {
+  padding-bottom: 47px;
+}
+.feature-title {
+  font-weight: 700;
+  font-size: inherit;
+  line-height: 1.14;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.feature-item {
+  width: calc((100% - 90px) / 4);
+}
+.feature-item:not(:last-child) {
+  margin-right: 30px;
+}
+.feature-icon {
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-bottom: 30px;
+  background: var(--team-background-color);
+  border-radius: 4px;
+}
+/* стили чем мы занимаемся и команды*/
+.what.section {
+  padding-top: 47px;
+}
+/* заголовок секции*/
+.team-title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+/* ширина карточки чем мы занимаемся  */
+.what-item {
+  width: calc((100% - 60px) / 3);
+}
+/* оступы между карточками */
+.what-item:not(:last-child),
+.teamcard:not(:last-child) {
+  margin-right: 30px;
+}
+/* стили команды */
+.team {
+  background-color: var(--team-background-color);
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+}
+/* стили карточки команды */
+.teamcard {
+  width: calc((100% - 90px) / 4);
+  border-bottom: 1px solid transparent;
+  border-radius: 4px;
+  padding-bottom: 30px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+/* имя члена команды */
+.teamcard > h3 {
+  font-weight: 500;
+  font-size: inherit;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+/* блок соцсетей */
+.teamcard .social {
+  margin-top: 16px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+.social-item {
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  padding: 12px;
+  color: var(--icon-color);
+}
+.social-item:not(:last-child) {
+  margin-right: 10px;
+}
+.social-item > .link {
+  color: inherit;
+}
+.social-icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+.social-item:hover,
+.social-item:focus {
+  background-color: var(--accent-color);
+  color: var(--hero-text-color);
+}
+/* постоянные клиенты */
+.clients .team-title {
+  margin-bottom: 50px;
+}
+.clients .list {
+  margin-left: auto;
+  margin-right: auto;
+}
+.clients .item {
+  width: calc((100%-150px) / 6);
+  padding: 15px 31px;
+  border: 1px solid var(--icon-color);
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--icon-color);
+}
+.clients .item:not(:last-child) {
+  margin-right: 30px;
+}
+.clients .link {
+  color: inherit;
+}
+.clients .icon {
+  width: 106px;
+  height: 60px;
+  fill: currentColor;
+}
+.clients .item:hover,
+.clients .item:focus {
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+}
+/* стили футера */
+.footer {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 60px 0;
+  background-color: var(--footer-backgorund-color);
+}
+.footer-text {
+  color: var(--hero-text-color);
+  font-style: normal;
+}
+.footer .address {
+  margin-top: 20px;
+}
+.footer-link {
+  color: var(--footer-link-color);
+  font-style: normal;
+  margin-top: 9px;
+}
+/* секция присоединяйтесь */
+.join {
+  margin-left: 70px;
+  padding-top: 12px;
+  color: var(--hero-text-color);
+}
+.join .title {
+  font-size: inherit;
+  line-height: 1.14;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.join .social-item {
+  color: var(--hero-text-color);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.join .social-item:hover,
+.join .social-item:focus {
+  background-color: var(--accent-color);
+  color: var(--hero-text-color);
+}
+/* стили портфолио */
+/* фильтр */
+/* эффекты кнопок при hover focus */
+.filter .button:hover,
+.filter .button:focus {
+  color: var(--hero-text-color);
+  background-color: var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+/*стили кнопок*/
+.filter .button {
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  /* у самой кнопки с классом .button граница 1 px */
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 21px;
+  padding-right: 21px;
+}
+/* отступы и позиционирование фильтра */
+.filter {
+  margin-bottom: 34px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
+/* отступы между кнопками фильтра  */
+.filter > .item:not(:last-child) {
+  margin-right: 8px;
+}
+/* собственно портфолио */
+
+/* стили блоков портфолио */
+.portfolio {
+  display: flex;
+  flex-wrap: wrap;
+}
+/* ширина карточки */
+.portfolio-item {
+  width: calc((100% - 60px) / 3);
+}
+/* оступы между карточками */
+.portfolio-item:not(:nth-child(3n)) {
+  margin-right: 30px;
+}
+.portfolio-item:not(:nth-last-child(-n + 3)) {
+  margin-bottom: 30px;
+}
+.portfolio-item:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+/* название продукта */
+.portfolio-item h2 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+/* тип продукта */
+.portfolio-text {
+  color: var(--main-text-color);
+  font-size: 16px;
+  line-height: 1.87;
+}
+/* нижняя часть карточки */
+.portfolio-bottom {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-right: 24px;
+  padding-left: 24px;
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+}
