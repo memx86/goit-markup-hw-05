@@ -67,9 +67,18 @@
       <section class="hero hero-background">
         <div class="container">
           <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-          <button class="button accent-background" type="button">Заказать услугу</button>
+          <button class="button accent-background" type="button" data-modal-open>
+            Заказать услугу
+          </button>
+          <!-- data-modal-open - на кнопку открытия модального окна. -->
         </div>
       </section>
+      <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+          <button class="modal-button" type="button" data-modal-close>X</button>
+          <!-- data-modal-close - на кнопку закрытия модального окна. -->
+        </div>
+      </div>
       <!-- Особенности -->
       <section class="feature section">
         <div class="container">
@@ -127,17 +136,16 @@
           <h2 class="secondary-text team-title">Чем мы занимаемся</h2>
           <ul class="list flex">
             <li class="what-item">
-              <img class="image" src="./images/doings/box1.jpg" alt="Разработка" />
+              <img class="image" src="./images/doings/box1.jpg" alt="Десктопные приложения" />
+              <p class="what-label">Десктопные приложения</p>
             </li>
             <li class="what-item">
-              <img
-                class="image"
-                src="./images/doings/box2.jpg"
-                alt="Адаптация к мобильным устройствам"
-              />
+              <img class="image" src="./images/doings/box2.jpg" alt="Мобильные приложения" />
+              <p class="what-label">Мобильные приложения</p>
             </li>
             <li class="what-item">
-              <img class="image" src="./images/doings/box3.jpg" alt="Дизайн" />
+              <img class="image" src="./images/doings/box3.jpg" alt="Дизайнерские решения" />
+              <p class="what-label">Дизайнерские решения</p>
             </li>
           </ul>
         </div>
@@ -394,5 +402,6 @@
         </section>
       </div>
     </footer>
+    <script src="./js/modal.js"></script>
   </body>
 </html>

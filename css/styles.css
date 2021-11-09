@@ -153,6 +153,20 @@ p {
 .link.current {
   color: var(--accent-color);
 }
+.header-list .item {
+  position: relative;
+}
+.item .current::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 100%;
+  transform: translate(0, -75%);
+  width: 100%;
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
 /* стиль текста шапки + центрирование по высоте */
 .header-list {
   font-weight: 500;
@@ -161,9 +175,7 @@ p {
   align-items: center;
 }
 /* отступы шапки */
-.site-nav .link {
-  margin-right: 93px;
-}
+
 .header-list > .item:not(:last-child) {
   margin-right: 50px;
 }
@@ -171,6 +183,7 @@ p {
   margin-right: auto;
 }
 .site-nav .logo {
+  margin-right: 93px;
   margin-top: auto;
   margin-bottom: auto;
 }
@@ -191,8 +204,6 @@ p {
 
 /* стили героя */
 .hero {
-  color: var(--hero-text-color);
-  text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
   max-width: 1600px;
@@ -204,19 +215,27 @@ p {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  color: var(--hero-text-color);
+  text-align: center;
 }
 .hero-title {
+  margin-bottom: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 696px;
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin-bottom: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 696px;
 }
 .hero .button {
+  /* у самой кнопки с классом .button граница 1 px */
+  padding-left: 31px;
+  padding-right: 31px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   color: var(--hero-text-color);
   font-family: inherit;
   font-weight: 700;
@@ -224,12 +243,6 @@ p {
   line-height: 1.87;
   letter-spacing: 0.06em;
   cursor: pointer;
-  /* у самой кнопки с классом .button граница 1 px */
-  padding-left: 31px;
-  padding-right: 31px;
-  padding-top: 9px;
-  padding-bottom: 9px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 .hero .button:hover,
 .hero .button:focus,
@@ -237,16 +250,52 @@ p {
   /* color: var(--accent-color); */
   background-color: var(--hero-button-hover-color);
 }
+/* Модальное окно */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+/* прячет модальное окно */
+.is-hidden {
+  pointer-events: none;
+  opacity: 0;
+}
+.modal {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  height: 581px;
+  background-color: var(--hero-text-color);
+}
+.modal-button {
+  position: absolute;
+  left: calc(100% - 8px);
+  top: 8px;
+  transform: translate(-100%, 0);
+  width: 30px;
+  height: 30px;
+  background: var(--secondary-background-color);
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
 /* стили особенностей */
 .feature.section {
   padding-bottom: 47px;
 }
 .feature-title {
+  margin-bottom: 10px;
   font-weight: 700;
   font-size: inherit;
   line-height: 1.14;
   text-transform: uppercase;
-  margin-bottom: 10px;
 }
 .feature-item {
   width: calc((100% - 90px) / 4);
@@ -269,22 +318,42 @@ p {
 }
 /* заголовок секции*/
 .team-title {
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.17;
   margin-bottom: 50px;
   margin-left: auto;
   margin-right: auto;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.17;
   text-align: center;
 }
 /* ширина карточки чем мы занимаемся  */
 .what-item {
   width: calc((100% - 60px) / 3);
+  position: relative;
 }
 /* оступы между карточками */
 .what-item:not(:last-child),
 .teamcard:not(:last-child) {
   margin-right: 30px;
+}
+.what-label {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  transform: translate(0, -100%);
+  padding-top: 27px;
+  padding-bottom: 27px;
+  font-weight: 700;
+  line-height: 1.14;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--hero-text-color);
+  background-color: rgba(47, 48, 58, 0.8);
+  opacity: 0;
+}
+.what-item:hover .what-label {
+  opacity: 1;
 }
 /* стили команды */
 .team {
@@ -296,18 +365,18 @@ p {
 /* стили карточки команды */
 .teamcard {
   width: calc((100% - 90px) / 4);
+  padding-bottom: 30px;
   border-bottom: 1px solid transparent;
   border-radius: 4px;
-  padding-bottom: 30px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 /* имя члена команды */
 .teamcard > h3 {
-  font-weight: 500;
-  font-size: inherit;
   margin-top: 30px;
   margin-bottom: 10px;
+  font-weight: 500;
+  font-size: inherit;
 }
 /* блок соцсетей */
 .teamcard .social {
@@ -316,11 +385,11 @@ p {
   padding-right: 32px;
 }
 .social-item {
-  border: none;
-  border-radius: 50%;
   width: 44px;
   height: 44px;
   padding: 12px;
+  border: none;
+  border-radius: 50%;
   color: var(--icon-color);
 }
 .social-item:not(:last-child) {
@@ -387,9 +456,9 @@ p {
   margin-top: 20px;
 }
 .footer-link {
+  margin-top: 9px;
   color: var(--footer-link-color);
   font-style: normal;
-  margin-top: 9px;
 }
 /* секция присоединяйтесь */
 .join {
@@ -398,10 +467,10 @@ p {
   color: var(--hero-text-color);
 }
 .join .title {
+  margin-bottom: 20px;
   font-size: inherit;
   line-height: 1.14;
   text-transform: uppercase;
-  margin-bottom: 20px;
 }
 .join .social-item {
   color: var(--hero-text-color);
@@ -424,17 +493,17 @@ p {
 }
 /*стили кнопок*/
 .filter .button {
+  /* у самой кнопки с классом .button граница 1 px */
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 21px;
+  padding-right: 21px;
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.6;
   letter-spacing: 0.03em;
   cursor: pointer;
-  /* у самой кнопки с классом .button граница 1 px */
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 21px;
-  padding-right: 21px;
 }
 /* отступы и позиционирование фильтра */
 .filter {
@@ -466,17 +535,38 @@ p {
 .portfolio-item:not(:nth-last-child(-n + 3)) {
   margin-bottom: 30px;
 }
+
+.thumb {
+  position: relative;
+}
+.portfolio-description {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  transform: translate(0, -100%);
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+  color: var(--hero-text-color);
+  background: rgba(33, 150, 243, 0.9);
+  font-size: 18px;
+  line-height: 1.56;
+  opacity: 0;
+}
 .portfolio-item:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+.portfolio-item:hover .portfolio-description {
+  opacity: 1;
+}
 /* название продукта */
 .portfolio-item h2 {
+  margin-bottom: 4px;
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
   letter-spacing: 0.06em;
-  margin-bottom: 4px;
 }
 /* тип продукта */
 .portfolio-text {
