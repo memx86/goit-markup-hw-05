@@ -254,8 +254,9 @@ p {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
   margin-left: auto;
   margin-right: auto;
   background-color: rgba(0, 0, 0, 0.2);
@@ -266,9 +267,10 @@ p {
   opacity: 0;
 }
 .modal {
-  position: relative;
+  position: absolute;
   top: 50%;
   left: 50%;
+  z-index: 2;
   transform: translate(-50%, -50%);
   width: 528px;
   height: 581px;
@@ -278,6 +280,7 @@ p {
   position: absolute;
   left: calc(100% - 8px);
   top: 8px;
+  z-index: 3;
   transform: translate(-100%, 0);
   width: 30px;
   height: 30px;
@@ -290,7 +293,7 @@ p {
   position: absolute;
   left: 50%;
   top: 50%;
-  z-index: 1;
+  z-index: 3;
   transform: translate(5%, -50%) rotate(-45deg);
   width: 7px;
   height: 7px;
@@ -302,7 +305,7 @@ p {
   position: absolute;
   left: 50%;
   top: 50%;
-  z-index: 1;
+  z-index: 3;
   transform: translate(-105%, -50%) rotate(135deg);
   width: 7px;
   height: 7px;
@@ -426,11 +429,6 @@ p {
   height: 20px;
   fill: currentColor;
 }
-.social-item:hover,
-.social-item:focus {
-  background-color: var(--accent-color);
-  color: var(--hero-text-color);
-}
 /* постоянные клиенты */
 .clients .team-title {
   margin-bottom: 50px;
@@ -459,7 +457,7 @@ p {
   fill: currentColor;
 }
 .clients .item:hover,
-.clients .item:focus {
+.clients .link:focus {
   color: var(--accent-color);
   border: 1px solid var(--accent-color);
 }
@@ -499,8 +497,8 @@ p {
   color: var(--hero-text-color);
   background-color: rgba(255, 255, 255, 0.1);
 }
-.join .social-item:hover,
-.join .social-item:focus {
+.social-item:hover,
+.social-item .link:focus {
   background-color: var(--accent-color);
   color: var(--hero-text-color);
 }
@@ -580,7 +578,8 @@ p {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-.portfolio-item:hover .portfolio-description {
+.portfolio-item:hover .portfolio-description,
+.portfolio-item .link:focus .portfolio-description {
   opacity: 1;
 }
 /* название продукта */
