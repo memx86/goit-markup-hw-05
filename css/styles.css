@@ -17,7 +17,7 @@
   --hero-background-color: #c4c4c4;
   /* заливка кнопки героя при фокусе #188CE8 */
   --hero-button-hover-color: #188ce8;
-  /* заливка команды */
+  /* заливка секции команды */
   --team-background-color: #f5f4fa;
   /* цвет иконок #AFB1B8*/
   --icon-color: #afb1b8;
@@ -25,6 +25,8 @@
   --footer-backgorund-color: #2f303a;
   /* цвет ссылок в футере */
   --footer-link-color: rgba(255, 255, 255, 0.6);
+  /* функция распределения времени для анимаций */
+  --animation-cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* стилизация всей страницы */
@@ -190,7 +192,9 @@ p {
   display: block;
   padding-top: 32px;
   padding-bottom: 32px;
+  transition: color 250ms var(--animation-cubic);
 }
+
 /* иконки в контактах */
 .contacts .link {
   display: inline-flex;
@@ -241,11 +245,11 @@ p {
   line-height: 1.87;
   letter-spacing: 0.06em;
   cursor: pointer;
+  transition: color 250ms var(--animation-cubic);
 }
 .hero .button:hover,
 .hero .button:focus,
 .hero .button:active {
-  /* color: var(--accent-color); */
   background-color: var(--hero-button-hover-color);
 }
 /* Модальное окно */
@@ -261,19 +265,27 @@ p {
   background-color: rgba(0, 0, 0, 0.2);
 }
 /* прячет модальное окно */
-.is-hidden {
+.backdrop.is-hidden {
   pointer-events: none;
   opacity: 0;
+}
+.backdrop {
+  opacity: 1;
+  transition: opacity 250ms var(--animation-cubic);
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(1.5);
 }
 .modal {
   position: absolute;
   top: 50%;
   left: 50%;
   z-index: 2;
-  transform: translate(-50%, -50%);
   width: 528px;
   height: 581px;
   background-color: var(--hero-text-color);
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 250ms var(--animation-cubic);
 }
 .modal-button {
   position: absolute;
@@ -376,6 +388,8 @@ p {
   color: var(--hero-text-color);
   background-color: rgba(47, 48, 58, 0.8);
   opacity: 0;
+  transition: opacity 250ms var(--animation-cubic);
+  /* transform 250ms var(--animation-cubic) */
 }
 .what-item:hover .what-label {
   opacity: 1;
@@ -393,6 +407,7 @@ p {
   padding-bottom: 30px;
   border-bottom: 1px solid transparent;
   border-radius: 4px;
+  background-color: var(--secondary-background-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
 }
@@ -416,6 +431,7 @@ p {
   border: none;
   border-radius: 50%;
   color: var(--icon-color);
+  transition: color 250ms var(--animation-cubic), background-color 250ms var(--animation-cubic);
 }
 .social-item:not(:last-child) {
   margin-right: 10px;
@@ -446,6 +462,7 @@ p {
 }
 .clients .item:not(:last-child) {
   margin-right: 30px;
+  transition: color 250ms var(--animation-cubic), border-color 250ms var(--animation-cubic);
 }
 .clients .link {
   color: inherit;
@@ -458,7 +475,7 @@ p {
 .clients .item:hover,
 .clients .link:focus {
   color: var(--accent-color);
-  border: 1px solid var(--accent-color);
+  border-color: var(--accent-color);
 }
 /* стили футера */
 .footer {
@@ -524,6 +541,10 @@ p {
   line-height: 1.6;
   letter-spacing: 0.03em;
   cursor: pointer;
+  color: var(--secondary-text-color);
+  background-color: var(--team-background-color);
+  transition: color 250ms var(--animation-cubic), background-color 250ms var(--animation-cubic),
+    box-shadow 250ms var(--animation-cubic);
 }
 /* отступы и позиционирование фильтра */
 .filter {
@@ -547,6 +568,8 @@ p {
 /* ширина карточки */
 .portfolio-item {
   width: calc((100% - 60px) / 3);
+  background-color: var(--secondary-background-color);
+  transition: box-shadow 250ms var(--animation-cubic);
 }
 /* оступы между карточками */
 .portfolio-item:not(:nth-child(3n)) {
@@ -558,11 +581,12 @@ p {
 
 .thumb {
   position: relative;
+  overflow: hidden;
 }
 .portfolio-description {
   position: absolute;
   left: 0;
-  top: 100%;
+  top: 200%;
   transform: translate(0, -100%);
   width: 100%;
   height: 100%;
@@ -571,7 +595,7 @@ p {
   background: rgba(33, 150, 243, 0.9);
   font-size: 18px;
   line-height: 1.56;
-  opacity: 0;
+  transition: transform 250ms var(--animation-cubic);
 }
 .portfolio-item:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
@@ -579,7 +603,7 @@ p {
 }
 .portfolio-item:hover .portfolio-description,
 .portfolio-item .link:focus .portfolio-description {
-  opacity: 1;
+  transform: translate(0, -100%) translateY(-100%);
 }
 /* название продукта */
 .portfolio-item h2 {
