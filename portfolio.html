@@ -14,45 +14,43 @@
   </head>
   <body>
     <!-- Шапка сайта -->
-    <header class="header secondary-background">
+    <header class="header">
       <div class="container flex">
         <!-- Меню навигации -->
-        <nav class="flex site-nav">
-          <a href="./index.html" class="link logo"
-            ><span class="accent-text">Web</span><span class="logo-text">Studio</span></a
+        <nav class="header-nav">
+          <a href="./index.html" class="header-logo logo link"
+            ><span class="logo-accent">Web</span><span class="logo-text">Studio</span></a
           >
-          <ul class="header-list list flex">
-            <li class="item">
-              <a href="./index.html" class="link secondary-text hover-accent focus-accent"
-                >Студия</a
-              >
+          <ul class="header-list list">
+            <li class="header-item">
+              <a href="./index.html" class="header-link link">Студия</a>
             </li>
-            <li class="item">
+            <li class="header-item">
               <a
                 href="./portfolio.html"
-                class="link current secondary-text hover-accent focus-accent"
+                class="header-link header-link--current link"
                 aria-current="page"
                 >Портфолио</a
               >
             </li>
-            <li class="item">
-              <a href="" class="link secondary-text hover-accent focus-accent">Контакты</a>
+            <li class="header-item">
+              <a href="" class="header-link link">Контакты</a>
             </li>
           </ul>
         </nav>
         <!-- Контакты -->
-        <ul class="header-list contacts list flex">
-          <li class="item">
-            <a href="mailto:info@devstudio.com" class="link main-text hover-accent focus-accent">
-              <svg class="icon" width="16px" height="12px">
+        <ul class="header-list header-list--contacts list">
+          <li class="header-item">
+            <a href="mailto:info@devstudio.com" class="header-link header-link--contacts link">
+              <svg class="header-icon" width="16px" height="12px">
                 <use href="./images/sprite.svg#icon-envelope"></use>
               </svg>
               info@devstudio.com</a
             >
           </li>
-          <li class="item">
-            <a href="tel:+380961111111" class="link main-text hover-accent focus-accent">
-              <svg class="icon" width="16px" height="12px">
+          <li class="header-item">
+            <a href="tel:+380961111111" class="header-link header-link--contacts link">
+              <svg class="header-icon" width="16px" height="12px">
                 <use href="./images/sprite.svg#icon-smartphone"></use>
               </svg>
               +38 096 111 11 11</a
@@ -65,29 +63,29 @@
     <main>
       <section class="section">
         <div class="container">
-          <h1 class="secondary-text concealer">Портфолио</h1>
+          <h1 class="concealer">Портфолио</h1>
           <!-- Фильтр -->
           <ul class="filter list">
-            <li class="item">
-              <button class="button" type="button">Все</button>
+            <li class="filter-item">
+              <button class="filter-button button" type="button">Все</button>
             </li>
-            <li class="item">
-              <button class="button" type="button">Веб-сайты</button>
+            <li class="filter-item">
+              <button class="filter-button button" type="button">Веб-сайты</button>
             </li>
-            <li class="item">
-              <button class="button" type="button">Приложения</button>
+            <li class="filter-item">
+              <button class="filter-button button" type="button">Приложения</button>
             </li>
-            <li class="item">
-              <button class="button" type="button">Дизайн</button>
+            <li class="filter-item">
+              <button class="filter-button button" type="button">Дизайн</button>
             </li>
-            <li class="item">
-              <button class="button" type="button">Маркетинг</button>
+            <li class="filter-item">
+              <button class="filter-button button" type="button">Маркетинг</button>
             </li>
           </ul>
           <!--Собственно портфолио -->
           <ul class="portfolio list">
             <li class="portfolio-item">
-              <a href="" class="link">
+              <a href="" class="portfolio-link link">
                 <div class="thumb">
                   <img class="image" src="./images/portfolio/project1.jpg" alt="Технокряк" />
                   <p class="portfolio-description">
@@ -97,13 +95,13 @@
                   </p>
                 </div>
                 <div class="portfolio-bottom">
-                  <h2 class="secondary-text">Технокряк</h2>
+                  <h2 class="portfolio-subtitle">Технокряк</h2>
                   <p class="portfolio-text">Веб-сайт</p>
                 </div>
               </a>
             </li>
             <li class="portfolio-item">
-              <a href="" class="link">
+              <a href="" class="portfolio-link link">
                 <div class="thumb">
                   <img
                     class="image"
@@ -116,13 +114,13 @@
                   </p>
                 </div>
                 <div class="portfolio-bottom">
-                  <h2 class="secondary-text">Постер New Orlean vs Golden Star</h2>
+                  <h2 class="portfolio-subtitle">Постер New Orlean vs Golden Star</h2>
                   <p class="portfolio-text">Дизайн</p>
                 </div>
               </a>
             </li>
             <li class="portfolio-item">
-              <a href="" class="link">
+              <a href="" class="portfolio-link link">
                 <div class="thumb">
                   <img class="image" src="./images/portfolio/project3.jpg" alt="Ресторан Seafood" />
                   <p class="portfolio-description">
@@ -131,13 +129,13 @@
                   </p>
                 </div>
                 <div class="portfolio-bottom">
-                  <h2 class="secondary-text">Ресторан Seafood</h2>
+                  <h2 class="portfolio-subtitle">Ресторан Seafood</h2>
                   <p class="portfolio-text">Приложение</p>
                 </div>
               </a>
             </li>
             <li class="portfolio-item">
-              <a href="" class="link">
+              <a href="" class="portfolio-link link">
                 <div class="thumb">
                   <img class="image" src="./images/portfolio/project4.jpg" alt="Проект Prime" />
                   <p class="portfolio-description">
@@ -146,13 +144,13 @@
                   </p>
                 </div>
                 <div class="portfolio-bottom">
-                  <h2 class="secondary-text">Проект Prime</h2>
+                  <h2 class="portfolio-subtitle">Проект Prime</h2>
                   <p class="portfolio-text">Маркетинг</p>
                 </div>
               </a>
             </li>
             <li class="portfolio-item">
-              <a href="" class="link">
+              <a href="" class="portfolio-link link">
                 <div class="thumb">
                   <img class="image" src="./images/portfolio/project5.jpg" alt="Проект Boxes" />
                   <p class="portfolio-description">
@@ -161,13 +159,13 @@
                   </p>
                 </div>
                 <div class="portfolio-bottom">
-                  <h2 class="secondary-text">Проект Boxes</h2>
+                  <h2 class="portfolio-subtitle">Проект Boxes</h2>
                   <p class="portfolio-text">Приложение</p>
                 </div>
               </a>
             </li>
             <li class="portfolio-item">
-              <a href="" class="link">
+              <a href="" class="portfolio-link link">
                 <div class="thumb">
                   <img
                     class="image"
@@ -180,13 +178,13 @@
                   </p>
                 </div>
                 <div class="portfolio-bottom">
-                  <h2 class="secondary-text">Inspiration has no Borders</h2>
+                  <h2 class="portfolio-subtitle">Inspiration has no Borders</h2>
                   <p class="portfolio-text">Веб-сайт</p>
                 </div>
               </a>
             </li>
             <li class="portfolio-item">
-              <a href="" class="link">
+              <a href="" class="portfolio-link link">
                 <div class="thumb">
                   <img
                     class="image"
@@ -199,13 +197,13 @@
                   </p>
                 </div>
                 <div class="portfolio-bottom">
-                  <h2 class="secondary-text">Издание Limited Edition</h2>
+                  <h2 class="portfolio-subtitle">Издание Limited Edition</h2>
                   <p class="portfolio-text">Дизайн</p>
                 </div>
               </a>
             </li>
             <li class="portfolio-item">
-              <a href="" class="link">
+              <a href="" class="portfolio-link link">
                 <div class="thumb">
                   <img class="image" src="./images/portfolio/project8.jpg" alt="Проект LAB" />
                   <p class="portfolio-description">
@@ -214,13 +212,13 @@
                   </p>
                 </div>
                 <div class="portfolio-bottom">
-                  <h2 class="secondary-text">Проект LAB</h2>
+                  <h2 class="portfolio-subtitle">Проект LAB</h2>
                   <p class="portfolio-text">Маркетинг</p>
                 </div>
               </a>
             </li>
             <li class="portfolio-item">
-              <a href="" class="link">
+              <a href="" class="portfolio-link link">
                 <div class="thumb">
                   <img class="image" src="./images/portfolio/project9.jpg" alt="Growing Business" />
                   <p class="portfolio-description">
@@ -229,7 +227,7 @@
                   </p>
                 </div>
                 <div class="portfolio-bottom">
-                  <h2 class="secondary-text">Growing Business</h2>
+                  <h2 class="portfolio-subtitle">Growing Business</h2>
                   <p class="portfolio-text">Приложение</p>
                 </div>
               </a>
@@ -241,47 +239,45 @@
     <!-- Футер -->
     <footer class="footer">
       <div class="container flex">
-        <div class="footer-left">
+        <!-- Блок адреса -->
+        <div class="footer-address">
           <a href="./index.html" class="link logo"
-            ><span class="accent-text">Web</span><span class="footer-text">Studio</span></a
+            ><span class="logo-accent">Web</span><span class="footer-text">Studio</span></a
           >
           <address class="address">
             <p class="footer-text">г. Киев, пр-т Леси Украинки, 26</p>
-            <a href="mailto:info@example.com" class="link footer-link hover-accent focus-accent"
-              >info@example.com</a
-            >
+            <a href="mailto:info@example.com" class="footer-link link">info@example.com</a>
             <br />
-            <a href="tel:+380991111111" class="link footer-link hover-accent focus-accent"
-              >+38 099 111 11 11</a
-            >
+            <a href="tel:+380991111111" class="footer-link link">+38 099 111 11 11</a>
           </address>
         </div>
+        <!-- Присоединяйтесь -->
         <section class="join">
-          <h2 class="title">Присоединяйтесь</h2>
+          <h2 class="join-title">Присоединяйтесь</h2>
           <ul class="social list flex">
-            <li class="social-item" aria-label="Инстаграм">
-              <a href="" class="link">
+            <li class="join-social-item social-item" aria-label="Инстаграм">
+              <a href="" class="social-link link">
                 <svg class="social-icon">
                   <use href="./images/sprite.svg#icon-instagram"></use>
                 </svg>
               </a>
             </li>
-            <li class="social-item" aria-label="Твиттер">
-              <a href="" class="link">
+            <li class="join-social-item social-item" aria-label="Твиттер">
+              <a href="" class="social-link link">
                 <svg class="social-icon">
                   <use href="./images/sprite.svg#icon-twitter"></use>
                 </svg>
               </a>
             </li>
-            <li class="social-item" aria-label="Фейсбук">
-              <a href="" class="link">
+            <li class="join-social-item social-item" aria-label="Фейсбук">
+              <a href="" class="social-link link">
                 <svg class="social-icon">
                   <use href="./images/sprite.svg#icon-facebook"></use>
                 </svg>
               </a>
             </li>
-            <li class="social-item" aria-label="Линкедин">
-              <a href="" class="link">
+            <li class="join-social-item social-item" aria-label="Линкедин">
+              <a href="" class="social-link link">
                 <svg class="social-icon">
                   <use href="./images/sprite.svg#icon-linkedin"></use>
                 </svg>
