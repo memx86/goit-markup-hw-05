@@ -285,7 +285,6 @@ p {
   position: absolute;
   top: 50%;
   left: 50%;
-  z-index: 2;
   width: 528px;
   height: 581px;
   background-color: var(--hero-text-color);
@@ -296,39 +295,17 @@ p {
   position: absolute;
   left: calc(100% - 8px);
   top: 8px;
-  z-index: 3;
   transform: translate(-100%, 0);
   width: 30px;
   height: 30px;
+  padding: 5px;
   background: var(--secondary-background-color);
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
-.modal-button::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 3;
-  transform: translate(5%, -50%) rotate(-45deg);
-  width: 7px;
-  height: 7px;
-  border-top: 2px solid black;
-  border-left: 2px solid black;
+.modal-icon {
+  color: var(--logo-text-color);
 }
-.modal-button::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 3;
-  transform: translate(-105%, -50%) rotate(135deg);
-  width: 7px;
-  height: 7px;
-  border-top: 2px solid black;
-  border-left: 2px solid black;
-}
-
 /* стили особенностей */
 .feature {
   padding-bottom: 47px;
