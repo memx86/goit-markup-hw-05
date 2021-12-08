@@ -424,20 +424,19 @@ p {
   padding-left: 32px;
   padding-right: 32px;
 }
-.social-item {
-  width: 44px;
-  height: 44px;
-  padding: 12px;
-  border: none;
-  border-radius: 50%;
-  color: var(--icon-color);
-  transition: color 250ms var(--animation-cubic), background-color 250ms var(--animation-cubic);
-}
 .social-item:not(:last-child) {
   margin-right: 10px;
 }
 .social-link {
+  display: block;
+  padding: 12px;
+  width: 44px;
+  height: 44px;
   color: inherit;
+  border: none;
+  border-radius: 50%;
+  color: var(--icon-color);
+  transition: color 250ms var(--animation-cubic), background-color 250ms var(--animation-cubic);
 }
 .social-icon {
   width: 20px;
@@ -494,6 +493,7 @@ p {
   margin-top: 20px;
 }
 .footer-link {
+  display: block;
   margin-top: 9px;
   color: var(--footer-link-color);
   font-style: normal;
@@ -518,6 +518,11 @@ p {
 .join-item {
   color: var(--hero-text-color);
   background-color: rgba(255, 255, 255, 0.1);
+}
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--accent-color);
+  color: var(--hero-text-color);
 }
 /* стили портфолио */
 /* фильтр */
@@ -630,9 +635,4 @@ p {
   border-left: 1px solid #eeeeee;
   border-right: 1px solid #eeeeee;
   border-bottom: 1px solid #eeeeee;
-}
-.social-item:hover,
-.social-link:focus {
-  background-color: var(--accent-color);
-  color: var(--hero-text-color);
 }
