@@ -25,6 +25,9 @@
   --footer-backgorund-color: #2f303a;
   /* цвет ссылок в футере */
   --footer-link-color: rgba(255, 255, 255, 0.6);
+  /* для карточек */
+  --column-number: 3;
+  --gap-size: 30px;
   /* функция распределения времени для анимаций */
   --animation-cubic: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -36,7 +39,6 @@
 body {
   /* background-color: var(--main-background-color); */
   color: var(--main-text-color);
-  /* системные шрифты font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif; */
   font-family: roboto, -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
     helvetica neue, helvetica, Ubuntu, noto, arial, sans-serif;
   font-size: 14px;
@@ -125,7 +127,8 @@ button {
 }
 /* логотип */
 .logo {
-  font-family: raleway, sans-serif;
+  font-family: raleway, -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+    helvetica neue, helvetica, roboto, Ubuntu, noto, arial, sans-serif;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
@@ -205,7 +208,7 @@ button {
   margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
-  width: 696px;
+  max-width: 696px;
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -288,20 +291,14 @@ button {
 }
 .feature-list {
   display: flex;
-}
-.feature-subtitle {
-  margin-bottom: 10px;
-  font-weight: 700;
-  font-size: inherit;
-  line-height: 1.14;
-  text-transform: uppercase;
-  color: var(--secondary-text-color);
+  gap: var(--gap-size);
 }
 .feature-item {
-  width: calc((100% - 90px) / 4);
-}
-.feature-item:not(:last-child) {
-  margin-right: 30px;
+  --column-number: 4;
+  flex-basis: calc(
+    100% / var(--column-number) - var(--gap-size) * (var(--column-number) - 1) /
+      var(--column-number)
+  );
 }
 .feature-icon {
   padding-left: 100px;
@@ -312,7 +309,14 @@ button {
   background: var(--team-background-color);
   border-radius: 4px;
 }
-
+.feature-subtitle {
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: inherit;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--secondary-text-color);
+}
 /* заголовок секций */
 .title {
   margin-bottom: 50px;
@@ -331,10 +335,14 @@ button {
 }
 .what-list {
   display: flex;
+  gap: var(--gap-size);
 }
 /* карточка  */
 .what-item {
-  width: calc((100% - 60px) / 3);
+  flex-basis: calc(
+    100% / var(--column-number) - var(--gap-size) * (var(--column-number) - 1) /
+      var(--column-number)
+  );
   height: 294px;
   perspective: 600px;
 }
@@ -383,11 +391,6 @@ button {
 .what-item:hover .what-label {
   opacity: 1;
 }
-/* оступы между карточками*/
-.what-item:not(:last-child),
-.team-item:not(:last-child) {
-  margin-right: 30px;
-}
 /* стили команды */
 .team {
   background-color: var(--team-background-color);
@@ -397,10 +400,15 @@ button {
 }
 .team-list {
   display: flex;
+  gap: var(--gap-size);
 }
 /* стили карточки команды */
 .team-item {
-  width: calc((100% - 90px) / 4);
+  --column-number: 4;
+  flex-basis: calc(
+    100% / var(--column-number) - var(--gap-size) * (var(--column-number) - 1) /
+      var(--column-number)
+  );
   padding-bottom: 30px;
   border-bottom: 1px solid transparent;
   border-radius: 4px;
@@ -452,12 +460,14 @@ button {
   display: flex;
   margin-left: auto;
   margin-right: auto;
+  gap: var(--gap-size);
 }
 .clients-item {
-  width: calc((100%-150px) / 6);
-}
-.clients-item:not(:last-child) {
-  margin-right: 30px;
+  --column-number: 6;
+  flex-basis: calc(
+    100% / var(--column-number) - var(--gap-size) * (var(--column-number) - 1) /
+      var(--column-number)
+  );
 }
 .clients-link {
   display: block;
@@ -569,21 +579,17 @@ button {
 .portfolio {
   display: flex;
   flex-wrap: wrap;
+  gap: var(--gap-size);
 }
 /* ширина карточки */
 .portfolio-item {
-  width: calc((100% - 60px) / 3);
+  flex-basis: calc(
+    100% / var(--column-number) - var(--gap-size) * (var(--column-number) - 1) /
+      var(--column-number)
+  );
   background-color: var(--secondary-background-color);
   transition: box-shadow 250ms var(--animation-cubic);
 }
-/* оступы между карточками */
-.portfolio-item:not(:nth-child(3n)) {
-  margin-right: 30px;
-}
-.portfolio-item:not(:nth-last-child(-n + 3)) {
-  margin-bottom: 30px;
-}
-
 .thumb {
   position: relative;
   overflow: hidden;
