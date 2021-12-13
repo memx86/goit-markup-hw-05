@@ -270,7 +270,7 @@ button {
 }
 .modal-button {
   position: absolute;
-  left: calc(100% - 8px);
+  right: 8px;
   top: 8px;
   transform: translate(-100%, 0);
   width: 30px;
