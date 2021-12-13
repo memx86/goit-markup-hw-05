@@ -252,7 +252,7 @@ button {
 }
 .backdrop {
   opacity: 1;
-  transition: opacity 250ms var(--animation-cubic);
+  transition: opacity 250ms var(--animation-cubic), visibility 250ms var(--animation-cubic);
 }
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(1.5);
@@ -272,7 +272,6 @@ button {
   position: absolute;
   right: 8px;
   top: 8px;
-  transform: translate(-100%, 0);
   width: 30px;
   height: 30px;
   padding: 5px;
