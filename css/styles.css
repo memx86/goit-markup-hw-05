@@ -248,6 +248,7 @@ button {
 .backdrop.is-hidden {
   pointer-events: none;
   opacity: 0;
+  visibility: hidden;
 }
 .backdrop {
   opacity: 1;
@@ -261,8 +262,9 @@ button {
   top: 50%;
   left: 50%;
   width: 528px;
-  height: 581px;
+  min-height: 581px;
   background-color: var(--hero-text-color);
+  border-radius: 4px;
   transform: translate(-50%, -50%) scale(1);
   transition: transform 250ms var(--animation-cubic);
 }
