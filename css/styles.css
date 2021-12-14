@@ -223,8 +223,8 @@ button {
   letter-spacing: 0.06em;
   color: var(--hero-text-color);
   background-color: var(--accent-color);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  transition: color 250ms var(--animation-cubic);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 250ms var(--animation-cubic);
 }
 .hero-button:hover,
 .hero-button:focus {
@@ -584,7 +584,16 @@ button {
       var(--column-number)
   );
   background-color: var(--secondary-background-color);
+}
+.portfolio-link {
+  display: block;
   transition: box-shadow 250ms var(--animation-cubic);
+}
+.portfolio-link:hover,
+.portfolio-link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+  outline: none;
 }
 .thumb {
   position: relative;
@@ -604,16 +613,7 @@ button {
   line-height: 1.56;
   transition: transform 250ms var(--animation-cubic);
 }
-.portfolio-link {
-  display: block;
-}
-.portfolio-item:hover,
-.portfolio-link:focus {
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
-  outline: none;
-}
-.portfolio-item:hover .portfolio-description,
+.portfolio-link:hover .portfolio-description,
 .portfolio-link:focus .portfolio-description {
   transform: translate(0, -100%) translateY(-100%);
 }
